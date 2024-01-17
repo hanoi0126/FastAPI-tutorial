@@ -9,7 +9,7 @@ class TaskBase(BaseModel):
 class Task(TaskBase):
     id: int
     done: bool = Field(False, description="完了フラグ")
-    class Config:
+    class ConfigDict:
         orm_mode = True
 
 
@@ -20,5 +20,5 @@ class TaskCreate(TaskBase):
 class TaskCreateResponse(TaskCreate):
     id: int
 
-    class Config:
+    class ConfigDict:
         orm_mode = True
